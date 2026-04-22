@@ -49,3 +49,13 @@ const observer = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => observer.observe(el));
+
+const heroTitleLines = document.querySelectorAll(".hero-title-animate span");
+
+window.addEventListener("load", () => {
+  heroTitleLines.forEach((line, index) => {
+    setTimeout(() => {
+      line.classList.add("is-visible");
+    }, 180 * index + 120);
+  });
+});
